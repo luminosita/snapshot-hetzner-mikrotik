@@ -20,11 +20,3 @@ delay 5
 /log info message="Adding dhcp-client for ether1 interface ..."
 
 /ip/dhcp-client/add interface=ether1 use-peer-dns=yes add-default-route=yes
-
-/log info message="Removing scripts ..."
-
-/system/scheduler
-remove 0
-
-/system/script
-remove [find name="first-boot"]

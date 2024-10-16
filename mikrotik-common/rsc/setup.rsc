@@ -18,11 +18,24 @@
     }
 }
 
+$initScript title="run"
 $initScript title="first-boot"
+$initScript title="vars"
+$initScript title="certificates"
+$initScript title="base"    
+$initScript title="vpn"    
+$initScript title="ipsec"    
+$initScript title="pppoe"    
+$initScript title="firewall"    
+$initScript title="nat"   
+$initScript title="wireless"
+$initScript title="staticdns"   
+$initScript title="lock"     
+$initScript title="secure"     
 
-/log info message="Adding first-boot scheduler ..."
+/log info message="Adding run scheduler ..."
 
 /system/scheduler 
-add name="Boot" on-event="first-boot" interval=0s start-time=startup
+add name="Boot" on-event="run" interval=0s start-time=startup
 
 /file/remove [find where name="setup.rsc"]

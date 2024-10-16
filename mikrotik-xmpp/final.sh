@@ -8,14 +8,17 @@ CHR_IP=`cat output/server.log | grep IPv4 | sed -e s/IPv4:\ //`
 TEMP_PASS="laptop01"
 
 echo "Waiting on VM network to start ..."
-sleep 30
+sleep 10
+ping -t 30 -c 10 $CHR_IP
 
 #Approve licence and set temp password
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null admin@$CHR_IP
 
-echo "Bootstraping Mikrotik VM ..."
-sshpass -p $TEMP_PASS scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null scripts/first-boot.rsc scripts/setup.rsc admin@$CHR_IP:/
+echo "Coping scripts to Mikrotik VM ..."
+sshpass -p $TEMP_PASS scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null rsc/*.rsc admin@$CHR_IP:/
 sleep 2
+
+echo "Running setup script..."
 sshpass -p $TEMP_PASS ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null admin@$CHR_IP "/system/script/add name=\"setup\" source=[/file get [/file find where name=\"setup.rsc\"] contents];/system/script/run [find name=\"setup\"];/system/script/remove [find name=\"setup\"]"
 sleep 2
 
@@ -29,5 +32,4 @@ hcloud server create-image --type snapshot --description "Mikrotik CHR Final - a
 echo "Deleting server ..."
 
 hcloud server delete $SERVER_ID
-
 echo "Done."

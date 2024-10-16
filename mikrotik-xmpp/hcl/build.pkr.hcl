@@ -10,14 +10,3 @@ build {
     ]
   }
 }
-
-build {
-  name = "final"
-  sources = ["source.hcloud.final"]
-
-  provisioner "shell-local" {
-    inline = [
-      ""
-    ]
-  }
-}
