@@ -28,6 +28,7 @@
 
 /log info message="Running scripts from files ..."
 
+$runScript title="first-boot"
 $runScript title="vars"
 $runScript title="certificates"
 $runScript title="base"    
@@ -40,7 +41,6 @@ $runScript title="wireless"
 $runScript title="staticdns"   
 $runScript title="lock"     
 $runScript title="secure"     
-$runScript title="first-boot"
 
 /log info message="Removing scheduler ..."
 

@@ -1,6 +1,17 @@
-delay 5
+:delay 10
 
 /log info message="Running first-boot script ..."
+
+#Disable services 
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set api disabled=yes
+set api-ssl disabled=yes
+set winbox disabled=yes
+set www disabled=yes
+set www-ssl disabled=yes
+set ssh disabled=no
 
 /interface/ethernet
 :if ([:len [find]] = 0) do={
