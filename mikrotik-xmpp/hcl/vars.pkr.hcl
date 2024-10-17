@@ -29,5 +29,5 @@ variable "server_location" {
 locals {
 	ext = var.arch == "amd64" ? "" : "-arm64" 
 
-	image = "https://download.mikrotik.com/routeros/${var.chr_version}/chr-${var.chr_version}${local.ext}.img.zip"
+	imageUrl = "https://download.mikrotik.com/routeros/${var.chr_version}/chr-${var.chr_version}${local.ext}.img.zip"
 }
