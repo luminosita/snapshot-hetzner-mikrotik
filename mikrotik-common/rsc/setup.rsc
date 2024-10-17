@@ -32,6 +32,7 @@ $initScript title="wireless"
 $initScript title="staticdns"   
 $initScript title="lock"     
 $initScript title="secure"     
+$initScript title="wait"     
 
 /log info message="Adding run scheduler ..."
 
