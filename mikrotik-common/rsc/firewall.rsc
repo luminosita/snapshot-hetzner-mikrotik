@@ -24,7 +24,9 @@ add list=Trusted_port_knocker
 
 /ip firewall filter
 add action=accept chain=input comment="Allow HTTPS from anywhere" dst-port=443 protocol=tcp
-add action=accept chain=input comment="Allow SSH from anywhere" dst-port=22 protocol=tcp
+
+#Add in final script
+#add action=accept chain=input comment="Allow SSH from anywhere" dst-port=22 protocol=tcp
 
 add action=accept chain=input comment="Allow Winbox from Everywhere" dst-port=8291 protocol=tcp
 
