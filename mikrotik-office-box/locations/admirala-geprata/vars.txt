@@ -1,0 +1,23 @@
+# Define global variables
+
+:global CN [/system identity get name]
+
+:global PPPOEUSER "BEM4212974@yettel.rs"
+:global PPPOEPASS "BeNnBFX607z5"
+
+:global OUTINT "pppoe-out1"
+
+:global GATEWAY "192.168.50.1"
+:global NETWORK "192.168.50.0"
+:global GATEWAYMASK "192.168.50.1/24"
+:global NETMASK "192.168.50.0/24"
+
+:global DHCPPOOL "192.168.50.150-192.168.50.254"
+
+:global SSHPORT 22
+
+:global WPA2KEY "maki3011"
+
+:global VLANID 710
+
+:global ADMINUSER "kundun"

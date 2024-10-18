@@ -1,4 +1,4 @@
-# Deploy Mikrotik CHR 
+# Deploy Mikrotik CHR on Hetzner
 ### Step 1 - Create Vanilla Mikrotik Image
 
 ```bash
