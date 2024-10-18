@@ -1,0 +1,1 @@
+../../mikrotik-common/rsc/first-boot.rsc

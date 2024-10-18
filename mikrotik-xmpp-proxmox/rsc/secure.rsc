@@ -1,0 +1,1 @@
+../../mikrotik-common/rsc/secure.rsc
