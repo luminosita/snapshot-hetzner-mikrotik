@@ -43,7 +43,7 @@ fi
 scp scripts/*.sh root@proxmox.lan:~/scripts/
 
 ssh root@proxmox.lan "chmod +x ~/scripts/*.sh"
-ssh root@proxmox.lan "scripts/base.sh -i "$snapshot_id" -n Mikrotik-Template -v "$version" -s "$storage
+ssh root@proxmox.lan "scripts/base.sh -i "$snapshot_id" -n Mikrotik-Vanilla -v "$version" -s "$storage
 ssh root@proxmox.lan "scripts/start.sh -i "$id" -t "$snapshot_id" -n "$name" -s "$storage" -m "$mac
 
 CHR_IP=$ip_cidr
